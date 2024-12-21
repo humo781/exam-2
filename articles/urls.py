@@ -7,4 +7,3 @@ urlpatterns = [
     path('category/<str:category>/', views.articles_by_category, name='articles_by_category'),
     path('create/', views.article_create, name='create'),
 ]
-#  donn

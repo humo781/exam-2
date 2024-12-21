@@ -38,3 +38,7 @@ def articles_by_category(request, category):
         print("Maqolalar yo'q")
     ctx = {'articles': articles, 'category': category}
     return render(request, 'articles/articles-by-category.html', ctx)
+
+
+def article_delete(request):
+    pass
