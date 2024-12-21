@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} {{ category }} {% endblock %}
+
+{% block content %}
+    {% if articles %}
+        <h2>{{ category }}</h2>
+    {% endif %}
+    <div class="article-list">
+        {% for article in articles %}
+            <article class="post">
+                <h3>{{ article.title }}</h3>
+                <p class="post-meta">
+                    <span class="author">By: {{ article.author }}</span>
+                    <span class="date">Date: {{ article.created_at }}</span>
+                </p>
+                <p>{{ article.short_content }}</p>
+                <a href="{{ article.get_detail_url }}" class="read-more">Read More</a>
+            </article>
+        {% empty %}
+            <h1>No Article Yet!</h1>
+        {% endfor %}
+    </div>
+{% endblock %}
+
